@@ -10,10 +10,9 @@ def readme():
         return f.read()
 
 def requirements(filename):
-    reqs = list()
+    reqs = []
     with io.open(filename, encoding='utf-8') as f:
-        for line in f.readlines():
-            reqs.append(line.strip())
+        reqs.extend(line.strip() for line in f.readlines())
     return reqs
 
 
